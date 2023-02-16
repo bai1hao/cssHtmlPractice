@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>b1</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        input {
+            display: none;
+            /*opacity: 0;*/
+        }
+        label {
+            width:80px;
+            height: 80px;
+            display: grid;
+            place-content: center;
+        }
+        .box {
+            display: inline-block;
+            position: relative;
+            width:80px;
+            height: 80px;
+            border:1px solid black;
+        }
+        input:checked + .box{
+            background: gold;
+            border: solid black;
+        }
+        input:nth-child(1):checked + .box{
+            counter-increment: sum 10;
+        }
+        input:nth-child(3):checked + .box{
+            counter-increment: sum 32;
+        }
+        input:nth-child(5):checked + .box{
+            counter-increment: sum 64;
+        }
+        input:nth-child(7):checked + .box{
+            counter-increment: sum -15;
+        }
+        .sum:after {
+            content:counter(sum);
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" id="10" name="10">
+    <div class="box">
+        <label for="10">10</label>
+    </div>
+    <input type="checkbox" id="32" name="32">
+    <div class="box">
+        <label for="32">32</label>
+    </div>
+    <input type="checkbox" id="64" name="64">
+    <div class="box">
+        <label for="64">64</label>
+    </div>
+    <input type="checkbox" id="-15" name="-15">
+    <div class="box">
+        <label for="-15">-15</label>
+    </div>
+    <div class="sumBox">
+        <span class="sum">sum:</span>
+    </div>
+</div>
+</body>
+</html>

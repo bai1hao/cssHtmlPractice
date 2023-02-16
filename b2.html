@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>b1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body {
+            padding:20px;
+        }
+        ul {
+            list-style: none;
+        }
+        ul li {
+            margin:10px;
+            position: relative;
+        }
+        ul li>label:before {
+            content: ' ';
+            display: inline-block;
+            border:1px solid black;
+            position: absolute;
+            top:14px;
+            transform:scaleX(0);
+            transform-origin:left;
+            /*opacity: 0;*/
+            width:50px;
+            transition: all 0.3s linear;
+        }
+        input {
+            display: none;
+        }
+        .checkBox{
+            display: inline-block;
+            border:2px solid dimgray;
+            border-radius: 2px;
+            height: 20px;
+            position: relative;
+            width:14px;
+            top:5px;
+            right:10px;
+        }
+        input:checked+li>div.checkBox{
+            transform:rotate(45deg);
+            border-top: none;
+            border-left:none;
+        }
+        input:checked+li>label:before{
+            opacity: 1;
+            transform:scaleX(1) translateX(0);
+            transition:0.2s linear transform;
+        }
+        input:checked+li>label {
+            font-style:italic;
+            color:gray
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Todo List</h2>
+<ul>
+    <input id="c1" type="checkbox">
+    <li> <div class="checkBox"></div> <label for="c1">Item 1</label></li>
+    <input id="c2" type="checkbox">
+    <li> <div class="checkBox"></div> <label for="c2">Item 2</label></li>
+    <input id="c3" type="checkbox">
+    <li> <div class="checkBox"></div> <label for="c3">Item 3</label></li>
+    <input id="c4" type="checkbox">
+    <li> <div class="checkBox"></div> <label for="c4">Item 4</label></li>
+</ul>
+</body>
+</html>
