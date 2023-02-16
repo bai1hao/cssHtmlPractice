@@ -2,14 +2,14 @@
 Your Code
  */
 
-div:nth-of-type(n+10){
+.photo-item:nth-of-type(n+10){
     counter-increment: sum 1;
     position: absolute;
     left: 268px;
     top: 276px;
 }
 
-div:nth-of-type(n+10):last-child:after{
+.photo-item:nth-of-type(n+10):last-child:after{
     content:"+" counter(sum);
     display: grid;
     position:absolute;

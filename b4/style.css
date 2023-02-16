@@ -1,0 +1,48 @@
+.root {
+    --color: #ff598c;
+}
+
+.particle-btn {
+    transition: transform ease-in 0.1s, background-color ease-in 0.1s, box-shadow ease-in 0.25s;
+}
+
+.particle-btn:before {
+    position: absolute;
+    content: "";
+    left: -2em;
+    right: -2em;
+    top: -2em;
+    bottom: -2em;
+    transition: ease-in-out .5s;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%),
+    radial-gradient(circle, #ff598c 20%, transparent 20%);
+    background-size: 20% 20%;
+    background-position: 13% 50%, 13% 30%, 13% 70%, 87% 30%, 87% 70%, 40% 30%, 40% 70%, 60% 30%, 60% 70%;
+    animation: active ease-in-out .75s forwards;
+}
+
+.particle-btn:active::before {
+    animation: none;
+    background-size: 0;
+}
+
+@keyframes active {
+    0% {
+        background-position: 13% 50%, 13% 30%, 13% 70%, 87% 30%, 87% 70%, 40% 30%, 40% 70%, 60% 30%, 60% 70%;
+    }
+    50% {
+        background-position: 5% 50%, 10% 20%, 3% 80%, 92% 20%, 92% 80%,35% 20%,35% 80%,65% 20%,65% 80%;
+    }
+    100% {
+        background-position: 0 50%, 4% 10%, -5% 90%, 97% 10%,97% 90%,30% 10%,30% 90%,70% 10%,70% 90%;
+        background-size: 0 0;
+    }
+}
