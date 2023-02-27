@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box {
+    width:100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #06013e;
+}
+.land{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    bottom:0;
+    background: url("images/1.png");
+    background-size: cover;
+    filter:brightness(80%) contrast(160%) saturate(120%) sepia(0);
+    transition: linear all 1s;
+}
+.sun {
+    width:250px;
+    left:50%;
+    transform:translateX(-50%);
+}
+.moon {
+    width:250px;
+    left:50%;
+    transform:translateX(-50%) translateY(165vh);
+}
+.circle-box{
+    transition: ease-in-out all 1s;
+    width:100%;
+    height:200vh;
+    transform: rotateZ(-180deg);
+}
+.circle {
+    position: absolute;
+}
+.day-button{
+    position: absolute;
+    left:10px;
+    bottom:10px;
+    padding:10px 25px;
+    background: #f9dc84;
+    color:#06013e;
+    border:none;
+    border-radius: 3px;
+}
+.day-button:hover{
+    background: #06013e;
+    color:#f9dc84;
+}
+.night-button{
+    position: absolute;
+    bottom:10px;
+    right:10px;
+    padding:10px 25px;
+    background: #06013e;
+    color:#f9dc84;
+    border:none;
+    border-radius: 3px;
+}
+.night-button:hover{
+    background: #f9dc84;
+    color:#06013e;
+}
+.cloud{
+    position: absolute;
+    right:0;
+    top:100px;
+    width:100px;
+    opacity: 0.8;
+    animation: cloud linear 60s;
+}
+.cloud img {
+
+}
+@keyframes cloud {
+    99%{
+        transform:translateX(-100vw);
+    }
+}
