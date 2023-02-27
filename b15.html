@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>b15</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            gap:15px;
+            width:100vw;
+            height:100vh;
+            display: grid;
+            grid-template-areas:    "header header header"
+                                    "newa newb ad"
+                                    "newc newc ad"
+                                    "newc newc ad"
+                                    "foot foot foot";
+        }
+        .border {
+            border:1px solid black;
+            display: grid;
+            place-content: center;
+        }
+        header {
+            grid-area:header;
+        }
+        .news-a{
+            grid-area:newa
+        }
+        .news-b{
+            grid-area:newb
+        }
+        .news-c{
+            grid-area:newc
+        }
+        .ad {
+            grid-area:ad
+        }
+        footer {
+            grid-area: foot
+        }
+        @media (max-width:480px){
+            body {
+                grid-template-areas:    "header"
+                                        "newa"
+                                        "newa"
+                                        "ad"
+                                        "ad"
+                                        "ad"
+                                        "newb"
+                                        "newb"
+                                        "newc"
+                                        "newc"
+                                        "foot";
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="border">Header</header>
+    <div class="news-a border">News A</div>
+    <div class="news-b border">News B</div>
+    <div class="news-c border">News C</div>
+    <div class="ad border">Ad Space</div>
+    <footer class="border">Footer</footer>
+</body>
+</html>
