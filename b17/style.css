@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.cover {
+    position: absolute;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    background: white;
+    left:10px;
+    top:10px;
+    font-size:20px;
+    /*display: none;*/
+
+}
+.back {
+    position: absolute;
+    width:170px;
+    height:170px;
+    background: #bcbcbc;
+    border-radius: 50%;
+}
+.blue {
+    width:170px;
+    height:170px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(90deg,#bcbcbc 50%,#5261d6 50%);
+}
+.circle-2 {
+    /*display: none;*/
+    transform:rotateZ(54deg) ;
+    background: linear-gradient(90deg,transparent 50%,#5261d6 50%);
+
+}

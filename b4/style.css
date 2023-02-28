@@ -1,5 +1,6 @@
 .root {
     --color: #ff598c;
+    user-select: none;
 }
 
 .particle-btn {

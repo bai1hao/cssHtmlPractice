@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>b8</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body{
+            display: grid;
+            height:100vh;
+            place-items: center;
+        }
+        .cell1 {
+            display: inline-block;
+            width:0;
+            height: 0;
+            border-right:20px solid yellow;
+            border-left:20px solid transparent;
+        }
+        .cell2 {
+            display: inline-block;
+            width:0;
+            height: 0;
+            border-left:20px solid yellow;
+            border-right:20px solid transparent;
+        }
+        .cell {
+            border-bottom:25px solid transparent;
+            border-top:40px solid transparent;
+        }
+        .corner {
+            display: inline-flex;
+            position: absolute;
+            /*background: rgba(255, 20, 20, 0.2);*/
+        }
+        .corner2 {
+            transform-origin: bottom;
+            transform:rotateZ(72deg);
+        }
+        .corner3 {
+            transform-origin: bottom;
+            transform:rotateZ(144deg);
+        }
+        .corner4 {
+            transform-origin: bottom;
+            transform:rotateZ(216deg);
+        }
+        .corner5 {
+            transform-origin: bottom;
+            transform:rotateZ(288deg);
+        }
+        .star {
+            width:130px;
+            height:134px;
+            padding-left:25px;
+            padding-top:3px;
+            /*background: rgba(44, 44, 44, 0.26);*/
+            animation:star 5s linear infinite;
+            border-radius: 50%;
+            transform-origin: center;
+        }
+        @keyframes star {
+            to {
+                transform:rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="star">
+    <div class="corner1 corner">
+        <div class="cell1 cell"></div>
+        <div class="cell2 cell"></div>
+    </div>
+    <div class="corner2 corner">
+        <div class="cell1 cell"></div>
+        <div class="cell2 cell"></div>
+    </div>
+    <div class="corner3 corner">
+        <div class="cell1 cell"></div>
+        <div class="cell2 cell"></div>
+    </div>
+    <div class="corner4 corner">
+        <div class="cell1 cell"></div>
+        <div class="cell2 cell"></div>
+    </div>
+    <div class="corner5 corner">
+        <div class="cell1 cell"></div>
+        <div class="cell2 cell"></div>
+    </div>
+
+</div>
+</body>
+</html>
