@@ -14,52 +14,70 @@ body {
     position: relative;
     width:100px;
     height: 100px;
-    transition:0.5s linear all;
+    /*transition:1s linear all;*/
     transform-style: preserve-3d;
-    transform:rotateY(20deg) rotateX(30deg);
+    animation: rotate 0.6s linear running;
 }
 .plan {
     width:100px;
     height: 100px;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
     position: absolute;
 }
 .planFront{
     background: url('dice.png') no-repeat -100px -100px;
     background-size: 300px 400px;
-    transform:translateZ(100px);
+    transform:translateZ(50px);
 }
 .planLeft{
     background: url('dice.png') no-repeat 0 -100px;
     background-size: 300px 400px;
-    transform: rotateY(-90deg) translateX(50px) translateZ(50px);
+    transform: rotateY(-90deg) translateZ(50px);
 }
 .planRight{
     background: url('dice.png') no-repeat -200px -100px;
     background-size: 300px 400px;
-    transform: rotateY(90deg) translateX(-50px) translateZ(50px);
+    transform: rotateY(90deg) translateZ(50px);
 }
 .planTop{
     background: url('dice.png') no-repeat -100px 0;
     background-size: 300px 400px;
-    transform: rotateX(90deg) translateY(50px) translateZ(50px);
+    transform: rotateX(90deg) translateZ(50px);
 
 }
 .planBottom{
     background: url('dice.png') no-repeat -100px -200px;
     background-size: 300px 400px;
-    transform: rotateX(-90deg) translateY(-50px) translateZ(50px);
+    transform: rotateX(-90deg) translateZ(50px);
 }
 .planBack{
     background: url('dice.png') no-repeat -100px -300px;
     background-size: 300px 400px;
-    transform:rotateY(180deg);
+    transform:rotateY(180deg) translateZ(50px);
 }
-#click{
+input{
     display: none;
 }
-#click:checked+div {
-    transform:rotate3d(0,1,0,90deg)
+input:active~div {
+    animation:none;
+}
+#d1:checked~div {
+    transform:rotateX(90deg);
+}
+#d2:checked~div {
+    transform:rotateY(90deg);
+}
+#d3:checked~div {
+    transform:rotateX(-90deg);
+}
+#d4:checked~div {
+    transform:rotateY(-90deg);
+}
+#d5:checked~div {
+    transform:rotate(0);
+}
+#d6:checked~div {
+    transform:rotateX(180deg);
 }
 @keyframes changeOrder {
     from {
@@ -77,9 +95,39 @@ label {
     top:0;
     animation: changeOrder 3s infinite;
 }
-label:nth-of-type(1) { animation-delay: -0.0s; }
-label:nth-of-type(2) { animation-delay: -0.5s; }
-label:nth-of-type(3) { animation-delay: -1.0s; }
-label:nth-of-type(4) { animation-delay: -1.5s; }
-label:nth-of-type(5) { animation-delay: -2.0s; }
-label:nth-of-type(6) { animation-delay: -2.5s; }
+label:nth-of-type(1) { animation-delay: 0.0s;
+    /*background: #27FB76;*/
+}
+label:nth-of-type(2) { animation-delay: 0.5s;
+    /*background: red;*/
+}
+label:nth-of-type(3) { animation-delay: 1.0s;
+    /*background: blue;*/
+}
+label:nth-of-type(4) { animation-delay: 1.5s;
+    /*background: yellow;*/
+}
+label:nth-of-type(5) { animation-delay: 2.0s;
+    /*background: orange;*/
+}
+label:nth-of-type(6) { animation-delay: 2.5s;
+    /*background: bisque;*/
+}
+
+@keyframes rotate {
+    20% {
+        transform:rotateX(90deg);
+    }
+    40% {
+        transform:rotateY(90deg) rotateZ(90deg);
+    }
+    60% {
+        transform:rotateZ(90deg) rotateY(180deg);
+    }
+    80% {
+        transform:rotateX(90deg) rotateX(45deg);
+    }
+    100% {
+        transform:rotateX(90deg);
+    }
+}
