@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>c1</title>
+    <style>
+        .bold {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<h1>Contents</h1>
+<p>This is <span>test</span> a WorldSkills Competition Paper D. In this paper, you are expected to design a poster to
+    welcome visitors to
+    your country.</p>
+<label for="search"></label>
+<input name="search" id="search" type="search">
+<button>search</button>
+<script>
+    let $ = e => document.querySelector(e);
+    let text = $('p').innerText;
+    $('button').addEventListener('click', e => {
+        let keyword = $('#search').value;
+        let Reg = new RegExp(keyword +'(?![^<]*[>])', 'g')
+        if (localStorage.getItem('text')) {
+            text = JSON.parse(localStorage.getItem('text'))
+        }
+        if(!Reg.test("")){
+            text = text.replace(Reg, `<span style="background-color:rgb(${getRandom(0,255)},${getRandom(0,255)},${getRandom(0,255)})">` + keyword + '</span>')
+        }
+        localStorage.setItem('text',JSON.stringify(text))
+        $('p').innerHTML = text;
+    })
+
+    function getRandom(min, max) {
+        return min + Math.round(Math.random() * (max - min))
+    }
+</script>
+</body>
+</html>
