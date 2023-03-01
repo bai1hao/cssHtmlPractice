@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>c2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .spot-light {
+            border-radius: 50%;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255,255,255,60%);
+            z-index: 99;
+            filter:blur(3px);
+            display: none;
+        }
+
+        img {
+            width: 400px;
+            position: absolute;
+        }
+
+        .box {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class='box'>
+    <img src="background.jpg" alt="">
+    <div class="spot-light"></div>
+</div>
+<script>
+    let $ = e => document.querySelector(e)
+    let light = $('.spot-light')
+    $('.box').onmousemove = function (event) {
+        light.style.display='unset'
+        let mouseX = event.clientX;
+        let mouseY = event.clientY;
+        if (mouseX >= light.offsetWidth / 2 && mouseX <= $('img').offsetWidth - light.offsetWidth / 2 && mouseY >= light.offsetHeight / 2 && mouseY <= $('img').offsetHeight - light.offsetHeight / 2) {
+            setTimeout(function () {
+                light.style.left = mouseX - light.offsetWidth / 2 + "px";
+                light.style.top = mouseY - light.offsetHeight / 2 + "px";
+            })
+        }
+    }
+    let a = 1;
+    $('.box').onwheel = function (e) {
+        if (e.deltaY < 0) {//变大
+            a+=0.1;
+            light.style.transform = `scale(${a})`
+        }else if (e.deltaY > 0 && a>0.2) {
+            a-=0.1;
+            console.log(Math.floor(a*10)/10)
+            light.style.transform = `scale(${Math.floor(a*10)/10})`
+        }
+    }
+</script>
+</body>
+</html>
