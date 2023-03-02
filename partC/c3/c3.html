@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>c3</title>
+</head>
+<body>
+
+<script>
+    function getType(value) {
+        //your code
+        // value = typeof value;
+        if(typeof value=='object'){
+            // console.log(Object.prototype.toString.call(value))
+            let msg = Object.prototype.toString.call(value)
+            let reg = RegExp("",'g')
+            msg=msg.split(' ')[1].split(']')[0].toLowerCase()
+            // console.log(msg)
+            value=msg;
+        }else {
+            value = typeof value;
+        }
+        return value;
+    }
+</script>
+
+<script src="test.js"></script>
+</body>
+</html>
